@@ -1,5 +1,7 @@
 ## honor8
-»ªÎªÈÙÒ«8È«ÍøÍ¨Ë¢ÈëµÚÈı·½ROMºó»áµ¼ÖÂµçĞÅ¿¨Í¨»°ÎŞÉùÒô£¬ÒòÎªÓïÒôÍ¨»°Ê¹ÓÃ2G/3GÍøÂç£¬ÈÙÒ«8¶Ô¶ÔµçĞÅ2G/3G£¨CDMA/CDMA2000£©µÄÖ§³Ö²ÉÓÃµÄÊÇÍâ¹Ò»ù´øĞ¾Æ¬£¬¿ÉÄÜµ¼ÖÂÁËOpen KirinµÄ²»Ö§³Ö¡£ÈôÒªÊ¹ÓÃ4GÍøÂçÍ¨»°Ğè¿ªÆôVoLTE£¬µ«Open Kirin¹Ù·½Ã»´òËãÖ§³ÖVoLTE£¨Ã²ËÆÈÙÒ«8Ò²²»Ö§³ÖVoLTE£©¡£
+Huawei Honor 8 Full Netcom brush into the third-party ROM will lead to telecom card calls without sound, because voice calls using 2G/3G network, Honor 8 support for telecom 2G/3G (CDMA/CDMA2000) using an external baseband chip, which may lead to Open Kirin's unsupported. To use 4G network calls need to enable VoLTE, but Open Kirin officially does not intend to support VoLTE (it seems that Honor 8 does not support VoLTE either).
+
+Translated with www.DeepL.com/Translator (free version)
 
 ## Unlock
 * adb shell getprop
@@ -48,14 +50,14 @@ xposed-uninstaller*.zip from https://dl-xda.xposed.info/framework/: Can be flash
 /data/hw_init/version/special_cust/EVA-AL00/all/cn/app
 
 
-## ½âÃÜData·ÖÇø£º
+## Decrypting the Data Partitionï¼š
 * adb reboot bootloader
 * fastboot flash recovery_ramdisk huawei-honor-8-em8_0-twrp3.2.1-7to-recovery-8.5.18.img
 * fastboot reboot
 * adb reboot recovery
-ÈıÇåDalvik/ART Cache¡¢Cache¡¢Data£¬¸ñÊ½»¯Data£¬¸ß¼¶¡ª¡ªÒÆ³ıDataÇ¿ÖÆ¼ÓÃÜ
+Triple Clear Dalvik/ART Cache, Cache, Data, Format Data, Advanced - Remove Data to force encryption
 
-## Ë¢ÈëµÚÈı·½ROM£¨ĞëÏÈÒÆ³ıDATAÇ¿ÖÆ¼ÓÃÜ£©£º
+## Flush third-party ROM (must remove DATA forced encryption first)ï¼‰ï¼š
 * adb reboot bootloader
 * fastboot flash system openkirin_rros_beta3.img
 * fastboot reboot
